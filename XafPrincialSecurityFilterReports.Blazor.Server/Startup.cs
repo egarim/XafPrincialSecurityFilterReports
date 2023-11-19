@@ -105,8 +105,8 @@ public class Startup {
         //var assembly = Assembly.Load(assemblyName);
 
         // Get the Type of the internal class
-        var internalType = assembly.GetType($"DevExpress.ExpressApp.ReportsV2.Blazor.Authorization.{internalClassName}");
-        ReplaceService(services, internalType, typeof(CustomReportsAuthorizationFilter));
+        //var internalType = assembly.GetType($"DevExpress.ExpressApp.ReportsV2.Blazor.Authorization.{internalClassName}");
+        //ReplaceService(services, internalType, typeof(CustomReportsAuthorizationFilter));
         // Now you can use the Type, for example, to create instances
         // Note: This will only work if the class has a public or internal constructor
         //var instance = Activator.CreateInstance(internalType);

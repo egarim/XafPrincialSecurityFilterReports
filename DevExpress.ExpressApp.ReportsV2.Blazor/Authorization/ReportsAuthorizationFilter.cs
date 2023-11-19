@@ -42,7 +42,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 namespace DevExpress.ExpressApp.ReportsV2.Blazor.Authorization {
 	[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1812:AvoidUninstantiatedInternalClasses")]
-	internal class ReportsAuthorizationFilter : IActionFilter {
+	public class ReportsAuthorizationFilter : IActionFilter {
 		readonly IXafAuthenticationHandler xafAuthenticationHelper;
 		readonly IPrincipalProvider principalProvider;
 		public ReportsAuthorizationFilter(IXafAuthenticationHandler xafAuthenticationHelper, IPrincipalProvider principalProvider) {
