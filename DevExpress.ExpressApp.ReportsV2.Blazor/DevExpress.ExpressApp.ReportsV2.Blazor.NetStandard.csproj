@@ -26,9 +26,6 @@
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
   <ItemGroup>
-    <!--<Reference Include="DevExpress.AspNetCore.Reporting.v23.1">
-      <HintPath>..\..\..\Bin\NetCore\DevExpress.AspNetCore.Reporting.v23.1.dll</HintPath>
-    <Private>False</Private></Reference>-->
     <Reference Include="DevExpress.AspNetCore.Reporting.v23.1">
       <HintPath>..\..\..\..\..\..\Program Files\DevExpress 23.1\Components\Bin\NetCore\DevExpress.AspNetCore.Reporting.v23.1.dll</HintPath>
     </Reference>
@@ -47,15 +44,6 @@
     <Reference Include="DevExpress.ExpressApp.AspNetCore.v23.1">
       <HintPath>..\..\..\..\..\..\Program Files\DevExpress 23.1\Components\Bin\NetCore\DevExpress.ExpressApp.AspNetCore.v23.1.dll</HintPath>
     </Reference>
-    <!--<Reference Include="DevExpress.Data.v23.1">
-      <HintPath>..\..\..\Bin\Standard\DevExpress.Data.v23.1.dll</HintPath>
-    <Private>False</Private></Reference>-->
-    <!--<Reference Include="DevExpress.DataAccess.v23.1">
-      <HintPath>.\..\..\..\..\..\Program Files\DevExpress 23.1\Components\Bin\Standard\DevExpress.DataAccess.v23.1.dll</HintPath>
-    <Private>False</Private></Reference>-->
-	  <!--<Reference Include="DevExpress.ExpressApp.AspNetCore.v23.1">
-		  <HintPath>..\..\..\Bin\NetCore\DevExpress.ExpressApp.AspNetCore.v23.1.dll</HintPath>
-	  <Private>False</Private></Reference>-->
     <Reference Include="DevExpress.ExpressApp.Blazor.v23.1">
       <HintPath>..\..\..\..\..\..\Program Files\DevExpress 23.1\Components\Bin\NetCore\DevExpress.ExpressApp.Blazor.v23.1.dll</HintPath>
     <Private>False</Private></Reference>
@@ -71,9 +59,6 @@
     <Reference Include="DevExpress.Persistent.Base.v23.1">
       <HintPath>..\..\..\..\..\..\Program Files\DevExpress 23.1\Components\Bin\Standard\DevExpress.Persistent.Base.v23.1.dll</HintPath>
     <Private>False</Private></Reference>
-    <!--<Reference Include="DevExpress.ExpressApp.ReportsV2.v23.1">
-      <HintPath>..\..\..\Bin\Standard\DevExpress.ExpressApp.ReportsV2.v23.1.dll</HintPath>
-    <Private>False</Private></Reference>-->
     <Reference Include="DevExpress.Printing.v23.1.Core">
       <HintPath>..\..\..\..\..\..\Program Files\DevExpress 23.1\Components\Bin\Standard\DevExpress.Printing.v23.1.Core.dll</HintPath>
     <Private>False</Private></Reference>
