@@ -1,0 +1,25 @@
+﻿@using DevExpress.XtraReports.Native
+@using Microsoft.JSInterop
+@inject IJSRuntime JSRuntime
+
+@ChildContent
+
+@code {
+    [Parameter]
+    public bool IsNewReport { get; set; }
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+    protected override async Task OnInitializedAsync() {
+        await JSRuntime.InvokeVoidAsync("xaf.setIsNewReport", IsNewReport);
+        List<string> hiddenActions = new List<string> { "dxrd-newreport", "dxrd-newreport-via-wizard", "dxrd-save-as", "dxrd-exit" };
+        await JSRuntime.InvokeVoidAsync("xaf.setHiddenReportDesignerActions", hiddenActions);
+        await JSRuntime.InvokeVoidAsync("xaf.setParametersTypes", GetParametersTypes());
+        await base.OnInitializedAsync();
+    }
+    private static IDictionary<string, string> GetParametersTypes() {
+        if(SerializationService.TryGetSerializer(ReportsModuleV2.XtraReportContextName, out var serializer) && serializer is BlazorReportSerializer reportSerializer) {
+            return reportSerializer.ParameterTypeNames;
+        }
+        return new Dictionary<string, string>();
+    }
+}

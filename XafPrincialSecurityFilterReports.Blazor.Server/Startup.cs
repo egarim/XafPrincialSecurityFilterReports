@@ -10,6 +10,8 @@ using XafPrincialSecurityFilterReports.Blazor.Server.Services;
 using DevExpress.Persistent.BaseImpl.PermissionPolicy;
 
 using System.Reflection;
+using Microsoft.Extensions.DependencyInjection;
+
 
 namespace XafPrincialSecurityFilterReports.Blazor.Server;
 
@@ -92,25 +94,53 @@ public class Startup {
         services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options => {
             options.LoginPath = "/LoginPage";
         });
+        var assembly = typeof(DevExpress.ExpressApp.Blazor.ApplicationBuilder.ReportsApplicationBuilderExtensions).Assembly;
+
+        // Replace "AssemblyName" with the name of the assembly and
+        // "InternalClassName" with the name of the internal class
+        string assemblyName = assembly.GetName().Name;
+        string internalClassName = "ReportsAuthorizationFilter";
+
+        // Load the assembly
+        //var assembly = Assembly.Load(assemblyName);
+
+        // Get the Type of the internal class
+        var internalType = assembly.GetType($"DevExpress.ExpressApp.ReportsV2.Blazor.Authorization.{internalClassName}");
+        ReplaceService(services, internalType, typeof(CustomReportsAuthorizationFilter));
+        // Now you can use the Type, for example, to create instances
+        // Note: This will only work if the class has a public or internal constructor
+        //var instance = Activator.CreateInstance(internalType);
+
         //CreateInternalType();
         // Replace the service
         //ReplaceService<CustomReportsAuthorizationFilter, CustomReportsAuthorizationFilter>(services);
     }
-  
-    //private static void ReplaceService<TService, TImplementation>(IServiceCollection services)
-    //   where TService : class
-    //   where TImplementation : class, TService
-    //{
-    //    // Remove the existing registrations
-    //    var serviceDescriptor = services.FirstOrDefault(descriptor => descriptor.ServiceType == typeof(TService));
-    //    if (serviceDescriptor != null)
-    //    {
-    //        services.Remove(serviceDescriptor);
-    //    }
+    private static void ReplaceService(IServiceCollection services, Type serviceType, Type implementationType)
+    {
+        // Remove the existing registrations
+        var serviceDescriptor = services.FirstOrDefault(descriptor => descriptor.ServiceType == serviceType);
+        if (serviceDescriptor != null)
+        {
+            services.Remove(serviceDescriptor);
+        }
 
-    //    // Add the new implementation
-    //    services.AddSingleton<TService, TImplementation>();
-    //}
+        // Add the new implementation
+        services.AddScoped(serviceType, implementationType);
+    }
+    private static void ReplaceService<TService, TImplementation>(IServiceCollection services)
+       where TService : class
+       where TImplementation : class, TService
+    {
+        // Remove the existing registrations
+        var serviceDescriptor = services.FirstOrDefault(descriptor => descriptor.ServiceType == typeof(TService));
+        if (serviceDescriptor != null)
+        {
+            services.Remove(serviceDescriptor);
+        }
+
+        // Add the new implementation
+        services.AddScoped<TService, TImplementation>();
+    }
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
         if(env.IsDevelopment()) {

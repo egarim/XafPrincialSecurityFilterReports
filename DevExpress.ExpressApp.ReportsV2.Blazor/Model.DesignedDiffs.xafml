@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application >
+  <ActionDesign>
+    <Actions>
+      <Action Id="ShowInReportV2" PaintStyle="CaptionAndImage" ImageName="Action_ShowInReport" />
+    </Actions>
+  </ActionDesign>
+  <Views>
+    <DetailView Id="ReportViewer_DetailView" CustomizationEnabled="False" />
+    <DetailView Id="ReportDesigner_DetailView" CustomizationEnabled="False" />
+  </Views>
+</Application>
