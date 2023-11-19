@@ -6,8 +6,8 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\..\DevExpress.Key\StrongKey.snk</AssemblyOriginatorKeyFile>
+    <!--<SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\DevExpress.Key\StrongKey.snk</AssemblyOriginatorKeyFile>-->
     <Configurations>Debug;Release</Configurations>
     <AssemblyName>DevExpress.ExpressApp.ReportsV2.Blazor.v23.1</AssemblyName>
     <PackageId>DevExpress.ExpressApp.ReportsV2.Blazor</PackageId>
@@ -26,44 +26,62 @@
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.AspNetCore.Reporting.v23.1">
+    <!--<Reference Include="DevExpress.AspNetCore.Reporting.v23.1">
       <HintPath>..\..\..\Bin\NetCore\DevExpress.AspNetCore.Reporting.v23.1.dll</HintPath>
-    <Private>False</Private></Reference>
+    <Private>False</Private></Reference>-->
+    <Reference Include="DevExpress.AspNetCore.Reporting.v23.1">
+      <HintPath>..\..\..\..\..\..\Program Files\DevExpress 23.1\Components\Bin\NetCore\DevExpress.AspNetCore.Reporting.v23.1.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Blazor.Reporting.v23.1.JSBasedControls.BlazorServer">
-      <HintPath>..\..\..\Bin\NetCore\DevExpress.Blazor.Reporting.v23.1.JSBasedControls.BlazorServer.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files\DevExpress 23.1\Components\Bin\NetCore\DevExpress.Blazor.Reporting.v23.1.JSBasedControls.BlazorServer.dll</HintPath>
     <Private>False</Private></Reference>
     <Reference Include="DevExpress.Blazor.Reporting.v23.1.JSBasedControls.Common">
-      <HintPath>..\..\..\Bin\NetCore\DevExpress.Blazor.Reporting.v23.1.JSBasedControls.Common.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files\DevExpress 23.1\Components\Bin\NetCore\DevExpress.Blazor.Reporting.v23.1.JSBasedControls.Common.dll</HintPath>
     <Private>False</Private></Reference>
     <Reference Include="DevExpress.Data.v23.1">
-      <HintPath>..\..\..\Bin\Standard\DevExpress.Data.v23.1.dll</HintPath>
-    <Private>False</Private></Reference>
+      <HintPath>..\..\..\..\..\..\Program Files\DevExpress 23.1\Components\Bin\Standard\DevExpress.Data.v23.1.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.DataAccess.v23.1">
-      <HintPath>..\..\..\Bin\Standard\DevExpress.DataAccess.v23.1.dll</HintPath>
-    <Private>False</Private></Reference>
-	  <Reference Include="DevExpress.ExpressApp.AspNetCore.v23.1">
+      <HintPath>..\..\..\..\..\..\Program Files\DevExpress 23.1\Components\Bin\Standard\DevExpress.DataAccess.v23.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.AspNetCore.v23.1">
+      <HintPath>..\..\..\..\..\..\Program Files\DevExpress 23.1\Components\Bin\NetCore\DevExpress.ExpressApp.AspNetCore.v23.1.dll</HintPath>
+    </Reference>
+    <!--<Reference Include="DevExpress.Data.v23.1">
+      <HintPath>..\..\..\Bin\Standard\DevExpress.Data.v23.1.dll</HintPath>
+    <Private>False</Private></Reference>-->
+    <!--<Reference Include="DevExpress.DataAccess.v23.1">
+      <HintPath>.\..\..\..\..\..\Program Files\DevExpress 23.1\Components\Bin\Standard\DevExpress.DataAccess.v23.1.dll</HintPath>
+    <Private>False</Private></Reference>-->
+	  <!--<Reference Include="DevExpress.ExpressApp.AspNetCore.v23.1">
 		  <HintPath>..\..\..\Bin\NetCore\DevExpress.ExpressApp.AspNetCore.v23.1.dll</HintPath>
-	  <Private>False</Private></Reference>
+	  <Private>False</Private></Reference>-->
     <Reference Include="DevExpress.ExpressApp.Blazor.v23.1">
-      <HintPath>..\..\..\Bin\NetCore\DevExpress.ExpressApp.Blazor.v23.1.dll</HintPath>
-    <Private>False</Private></Reference>
-    <Reference Include="DevExpress.ExpressApp.v23.1">
-      <HintPath>..\..\..\Bin\Standard\DevExpress.ExpressApp.v23.1.dll</HintPath>
-    <Private>False</Private></Reference>
-    <Reference Include="DevExpress.Persistent.Base.v23.1">
-      <HintPath>..\..\..\Bin\Standard\DevExpress.Persistent.Base.v23.1.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files\DevExpress 23.1\Components\Bin\NetCore\DevExpress.ExpressApp.Blazor.v23.1.dll</HintPath>
     <Private>False</Private></Reference>
     <Reference Include="DevExpress.ExpressApp.ReportsV2.v23.1">
-      <HintPath>..\..\..\Bin\Standard\DevExpress.ExpressApp.ReportsV2.v23.1.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files\DevExpress 23.1\Components\Bin\Standard\DevExpress.ExpressApp.ReportsV2.v23.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Security.AspNetCore.v23.1">
+      <HintPath>..\..\..\..\..\..\Program Files\DevExpress 23.1\Components\Bin\NetCore\DevExpress.ExpressApp.Security.AspNetCore.v23.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.v23.1">
+      <HintPath>..\..\..\..\..\..\Program Files\DevExpress 23.1\Components\Bin\Standard\DevExpress.ExpressApp.v23.1.dll</HintPath>
     <Private>False</Private></Reference>
+    <Reference Include="DevExpress.Persistent.Base.v23.1">
+      <HintPath>..\..\..\..\..\..\Program Files\DevExpress 23.1\Components\Bin\Standard\DevExpress.Persistent.Base.v23.1.dll</HintPath>
+    <Private>False</Private></Reference>
+    <!--<Reference Include="DevExpress.ExpressApp.ReportsV2.v23.1">
+      <HintPath>..\..\..\Bin\Standard\DevExpress.ExpressApp.ReportsV2.v23.1.dll</HintPath>
+    <Private>False</Private></Reference>-->
     <Reference Include="DevExpress.Printing.v23.1.Core">
-      <HintPath>..\..\..\Bin\Standard\DevExpress.Printing.v23.1.Core.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files\DevExpress 23.1\Components\Bin\Standard\DevExpress.Printing.v23.1.Core.dll</HintPath>
     <Private>False</Private></Reference>
     <Reference Include="DevExpress.XtraReports.v23.1">
-      <HintPath>..\..\..\Bin\Standard\DevExpress.XtraReports.v23.1.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files\DevExpress 23.1\Components\Bin\Standard\DevExpress.XtraReports.v23.1.dll</HintPath>
     <Private>False</Private></Reference>
     <Reference Include="DevExpress.XtraReports.v23.1.Web">
-      <HintPath>..\..\..\Bin\Standard\DevExpress.XtraReports.v23.1.Web.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files\DevExpress 23.1\Components\Bin\Standard\DevExpress.XtraReports.v23.1.Web.dll</HintPath>
     <Private>False</Private></Reference>
   </ItemGroup>
   <ItemGroup>
@@ -97,9 +115,9 @@
     <Compile Include="XafReportConcurrentCacheService.cs" />
   </ItemGroup>
   <ItemGroup>
-	<PackageReference Include="Microsoft.Extensions.DependencyModel" />
-  	<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
-  	<PackageReference Include="Microsoft.Extensions.Options" />
+	<PackageReference Include="Microsoft.Extensions.DependencyModel" Version="1.0.0" />
+  	<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="1.0.0" />
+  	<PackageReference Include="Microsoft.Extensions.Options" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Components\**\*.razor" />
